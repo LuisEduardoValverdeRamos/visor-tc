@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>TC de tórax · 23 oct 2026</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Una columna de lectura: acceso al visor arriba, instrucciones debajo. Tema oscuro como el de los visores de imágenes. */
+:root {
+  --bg: #0b0d0e; --panel: #13171a; --line: #2a3238; --fg: #e3e9eb; --muted: #8d9aa0;
+  --mark: #e8ae4c; --loc: #5fc5d7;
+  --ui: "Barlow Semi Condensed", "Arial Narrow", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, "Courier New", monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.5 var(--ui); -webkit-font-smoothing: antialiased; }
+main { max-width: 720px; margin: 0 auto; padding-block: 40px 56px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 32px; }
+h1 { margin: 0; font-size: 34px; font-weight: 600; line-height: 1.1; text-wrap: balance; }
+h2 { margin: 0 0 10px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+p { margin: 0; max-width: 65ch; }
+.meta { margin-top: 8px; color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; padding: 12px 20px; border-radius: 3px; font-weight: 600; letter-spacing: 0.02em; text-decoration: none; }
+.btn.main { background: var(--fg); color: var(--bg); }
+.btn.alt { border: 1px solid var(--line); color: var(--fg); background: var(--panel); }
+.btn:hover { opacity: 0.88; }
+.btn:focus-visible, a:focus-visible { outline: 2px solid var(--loc); outline-offset: 2px; }
+.note { color: var(--muted); font-size: 15px; }
+.hall { border-left: 3px solid var(--mark); padding: 4px 0 4px 16px; display: flex; flex-direction: column; gap: 6px; }
+.hall strong { color: var(--mark); font-weight: 600; }
+dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin: 0; }
+dt { font: 14px/1.6 var(--mono); white-space: nowrap; }
+dd { margin: 0; color: var(--muted); }
+table { border-collapse: collapse; font-size: 15px; width: 100%; }
+td { padding: 6px 12px 6px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+td:first-child { color: var(--muted); white-space: nowrap; }
+.wrap { overflow-x: auto; }
+a { color: var(--loc); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>TC de tórax · 23 oct 2026</h1>
+    <p class="meta">Tomografía de tórax sin contraste · varón de 66 años · estudio anonimizado</p>
+  </header>
+
+  <section class="actions">
+    <a class="btn main" id="open" href="https://viewer.ohif.org/viewer/dicomjson?url=https://luiseduardovalverderamos.github.io/visor-tc/estudio.json" target="_blank" rel="noopener">Abrir en el visor DICOM</a>
+    <a class="btn alt" href="informe_anonimizado.pdf" target="_blank" rel="noopener">Ver el informe radiológico</a>
+  </section>
+  <p class="note">Las imágenes se abren en OHIF, un visor médico de código abierto que funciona en el navegador. La primera carga baja unos 115 MB; en celular conviene usar wifi.</p>
+
+  <section class="hall">
+    <h2>Hallazgo principal del informe</h2>
+    <p><strong>Lesión intraluminal en la tráquea distal</strong>, junto al bronquio principal izquierdo, de unos 25 × 19 × 15 mm.</p>
+    <p class="note">Se ve en las series axiales 2 y 4, imágenes 44 a 58 (contando desde arriba).</p>
+  </section>
+
+  <section>
+    <h2>Cómo usar el visor</h2>
+    <dl>
+      <dt>Rueda del mouse</dt><dd>pasar de un corte a otro</dd>
+      <dt>Arrastrar con clic izquierdo</dt><dd>cambiar brillo y contraste (ventana)</dd>
+      <dt>Arrastrar con clic derecho</dt><dd>zoom</dd>
+      <dt>Arrastrar con la rueda</dt><dd>mover la imagen</dd>
+      <dt>Barra superior</dt><dd>ventanas predefinidas (pulmón, mediastino, hueso), regla para medir, vista en 3 planos (MPR)</dd>
+      <dt>Panel izquierdo</dt><dd>elegir la serie; arrastrarla al visor para cambiarla</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Series del estudio</h2>
+    <div class="wrap">
+      <table>
+        <tr><td>Serie 1</td><td>Topograma: radiografía de referencia, 1 imagen</td></tr>
+        <tr><td>Serie 2</td><td>Axial de 2 mm, filtro Br44 (tejidos blandos), 173 imágenes</td></tr>
+        <tr><td>Serie 4</td><td>Axial de 2 mm, filtro Hr68 (pulmón), 173 imágenes</td></tr>
+      </table>
+    </div>
+    <p class="note" style="margin-top:12px">Tomógrafo Siemens SOMATOM go.Now. Archivos DICOM originales sin pérdida de calidad.</p>
+  </section>
+
+  <section>
+    <h2>Privacidad</h2>
+    <p class="note">Se retiraron de los archivos el nombre, el DNI, la fecha de nacimiento, los nombres del personal, la institución, los identificadores internos y las etiquetas privadas del equipo. En el informe se taparon el nombre, el médico referente, la firma y el enlace al sistema de la clínica. Esta página pide a los buscadores no indexarla, pero cualquiera con el enlace puede verla.</p>
+  </section>
+</main>
+</body>
+</html>
