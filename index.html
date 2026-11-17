@@ -49,21 +49,21 @@ a { color: var(--loc); }
   </header>
 
   <section class="actions">
-    <a class="btn main" id="open" href="https://viewer.ohif.org/viewer/dicomjson?url=https://luiseduardovalverderamos.github.io/visor-tc/estudio.json" target="_blank" rel="noopener">Abrir en el visor DICOM</a>
+    <a class="btn main" id="open" href="https://viewer.ohif.org/viewer/dicomjson?url=https://luiseduardovalverderamos.github.io/visor-tc/estudio.json%3Fv%3D2" target="_blank" rel="noopener">Abrir en el visor DICOM</a>
     <a class="btn alt" href="informe_anonimizado.pdf" target="_blank" rel="noopener">Ver el informe radiológico</a>
   </section>
-  <p class="note">Las imágenes se abren en OHIF, un visor médico de código abierto que funciona en el navegador. La primera carga baja unos 115 MB; en celular conviene usar wifi.</p>
+  <p class="note">Las imágenes se abren en OHIF, un visor médico de código abierto que funciona en el navegador. Al abrirlo descarga unos 115 MB, así que en celular conviene usar wifi. Funciona mejor en computadora.</p>
 
   <section class="hall">
     <h2>Hallazgo principal del informe</h2>
     <p><strong>Lesión intraluminal en la tráquea distal</strong>, junto al bronquio principal izquierdo, de unos 25 × 19 × 15 mm.</p>
-    <p class="note">Se ve en las series axiales 2 y 4, imágenes 44 a 58 (contando desde arriba).</p>
+    <p class="note">Se ve en las series axiales 2 y 4, imágenes 44 a 58 de 173 (contando desde arriba). La 51 es la del centro.</p>
   </section>
 
   <section>
     <h2>Cómo usar el visor</h2>
     <dl>
-      <dt>Rueda del mouse</dt><dd>pasar de un corte a otro</dd>
+      <dt>Flechas ↑ ↓ o rueda</dt><dd>pasar de un corte a otro (el número de imagen sale abajo a la derecha)</dd>
       <dt>Arrastrar con clic izquierdo</dt><dd>cambiar brillo y contraste (ventana)</dd>
       <dt>Arrastrar con clic derecho</dt><dd>zoom</dd>
       <dt>Arrastrar con la rueda</dt><dd>mover la imagen</dd>
@@ -76,7 +76,7 @@ a { color: var(--loc); }
     <h2>Series del estudio</h2>
     <div class="wrap">
       <table>
-        <tr><td>Serie 1</td><td>Topograma: radiografía de referencia, 1 imagen</td></tr>
+        <tr><td>Serie 1</td><td>Topograma: radiografía de referencia, 1 imagen (no se carga en el visor; el archivo está en <a href="dicom/s1/0001.dcm">dicom/s1</a>)</td></tr>
         <tr><td>Serie 2</td><td>Axial de 2 mm, filtro Br44 (tejidos blandos), 173 imágenes</td></tr>
         <tr><td>Serie 4</td><td>Axial de 2 mm, filtro Hr68 (pulmón), 173 imágenes</td></tr>
       </table>
